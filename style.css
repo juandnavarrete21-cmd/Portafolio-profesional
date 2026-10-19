@@ -64,8 +64,10 @@ section:last-of-type{ border-bottom:none; }
   display:flex;
   flex-direction:column;
   justify-content:space-between;
+  gap:2rem;
   padding:2rem 1.75rem;
   border-right:1px solid var(--line);
+  overflow-y:auto;
 }
 
 .brand{ text-decoration:none; display:block; }
@@ -299,6 +301,8 @@ footer{
   .sidebar{
     position:relative;
     width:100%;
+    overflow:visible;
+    gap:0;
     padding:1.25rem 1.5rem;
   }
   .sidebar-nav{
