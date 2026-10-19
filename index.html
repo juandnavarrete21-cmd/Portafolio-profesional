@@ -16,11 +16,14 @@
 
 <header class="sidebar">
   <div class="sidebar-top">
+    <div class="sidebar-id">
     <a href="#inicio" class="brand">
       <span class="photo-ring"><img src="FOTO_PORTAFOLIO.png" alt="Foto de Juan David Navarrete Nieto" class="brand-photo"></span>
       <span class="brand-name">Juan Navarrete</span>
       <span class="brand-role">Datos &amp; automatización</span>
     </a>
+    <a href="#contacto" class="status"><span class="status-dot"></span>Abierto a proyectos</a>
+    </div>
     <label for="nav-toggle" class="nav-burger" aria-label="Abrir menú">
       <span></span><span></span><span></span>
     </label>
@@ -277,6 +280,25 @@
   </footer>
 
 </main>
+
+<script>
+  // Marca en el menú la sección visible
+  (function(){
+    var links = document.querySelectorAll('.sidebar-nav a');
+    if (!('IntersectionObserver' in window)) return;
+    var map = {};
+    links.forEach(function(a){ map[a.getAttribute('href').slice(1)] = a; });
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting && map[e.target.id]) {
+          links.forEach(function(a){ a.classList.remove('active'); });
+          map[e.target.id].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    document.querySelectorAll('main section[id]').forEach(function(s){ io.observe(s); });
+  })();
+</script>
 
 </body>
 </html>
