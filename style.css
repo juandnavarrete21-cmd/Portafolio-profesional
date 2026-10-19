@@ -241,6 +241,7 @@ main{ margin-left:var(--sidebar-w); }
 .project a:hover{ text-decoration:underline; }
 .project .project-stack{ font-family:var(--mono); font-size:.78rem; color:var(--neon); margin:0 0 1rem; }
 .project-links{ display:flex; gap:1.25rem; flex-wrap:wrap; }
+.project:only-child{ grid-column:1 / -1; }
 
 /* ---------- educación ---------- */
 .edu-list{ display:flex; flex-direction:column; }
